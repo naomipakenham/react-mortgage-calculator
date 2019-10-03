@@ -21,7 +21,7 @@ class SliderItem extends Component {
 
   render() {
     const {value} = this.state;
-    const {id, title, min, max, step} = this.props;
+    const {title, min, max, step} = this.props;
     const sliderValue = title.replace('{value}', value);
     return (
       <div className="Slider">

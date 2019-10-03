@@ -67,19 +67,7 @@ twoDPs(num){
 
 mortgageCalculation(){
  const { userInputs: { monthlyRepayment, interestRate, mortgageLoan }} = this.state;
-
- console.log('borrowed money: €' + mortgageLoan);
- console.log('Interest rate: ' + interestRate + '%');
- console.log('monthly payment: €' + monthlyRepayment);
-
  var mortgage = this.eachMonth(mortgageLoan, 0, 0, 0, interestRate, monthlyRepayment, []);
- const { months, moneyLeft, compoundInterest, graphArray } = mortgage;
- if(moneyLeft === 0){
-  console.log('time: ' +  Math.floor(months/12) + ' years ' + months%12 + ' months')
-  console.log('compound interest: €' + this.twoDPs(compoundInterest));
- } else {
-  console.log('Warning: With the options you chose you cannot pay off your mortgage in 35 years. You will still have €' + this.twoDPs(moneyLeft) + ' left to pay off.')
- }
  return mortgage;
 }
 
